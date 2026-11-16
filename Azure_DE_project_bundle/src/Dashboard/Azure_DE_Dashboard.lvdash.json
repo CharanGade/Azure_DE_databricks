@@ -1,0 +1,234 @@
+{
+  "datasets": [
+    {
+      "name": "b7bc2642",
+      "displayName": "Earthquake Data Insights from Silver Layer",
+      "queryLines": [
+        "select * from databricks_dev.silver.earthquake_data_final;"
+      ]
+    }
+  ],
+  "pages": [
+    {
+      "name": "3ad3450b",
+      "displayName": "Untitled page",
+      "layout": [
+        {
+          "widget": {
+            "name": "540b0ce3",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "b7bc2642",
+                  "fields": [
+                    {
+                      "name": "mag",
+                      "expression": "`mag`"
+                    },
+                    {
+                      "name": "place",
+                      "expression": "`place`"
+                    },
+                    {
+                      "name": "time",
+                      "expression": "`time`"
+                    },
+                    {
+                      "name": "status",
+                      "expression": "`status`"
+                    },
+                    {
+                      "name": "tsunami",
+                      "expression": "`tsunami`"
+                    },
+                    {
+                      "name": "url",
+                      "expression": "`url`"
+                    },
+                    {
+                      "name": "detail",
+                      "expression": "`detail`"
+                    },
+                    {
+                      "name": "alert",
+                      "expression": "`alert`"
+                    },
+                    {
+                      "name": "code",
+                      "expression": "`code`"
+                    },
+                    {
+                      "name": "ids",
+                      "expression": "`ids`"
+                    },
+                    {
+                      "name": "sources",
+                      "expression": "`sources`"
+                    },
+                    {
+                      "name": "types",
+                      "expression": "`types`"
+                    },
+                    {
+                      "name": "magType",
+                      "expression": "`magType`"
+                    },
+                    {
+                      "name": "title",
+                      "expression": "`title`"
+                    },
+                    {
+                      "name": "id",
+                      "expression": "`id`"
+                    },
+                    {
+                      "name": "longitude",
+                      "expression": "`longitude`"
+                    },
+                    {
+                      "name": "latitude",
+                      "expression": "`latitude`"
+                    },
+                    {
+                      "name": "depth",
+                      "expression": "`depth`"
+                    },
+                    {
+                      "name": "_load_timestamp",
+                      "expression": "`_load_timestamp`"
+                    }
+                  ],
+                  "disaggregated": true,
+                  "orders": [
+                    {
+                      "direction": "ASC",
+                      "expression": "`place`"
+                    }
+                  ]
+                }
+              }
+            ],
+            "spec": {
+              "frame": {
+                "showTitle": false,
+                "showDescription": false
+              },
+              "version": 2,
+              "widgetType": "table",
+              "encodings": {
+                "columns": [
+                  {
+                    "fieldName": "mag"
+                  },
+                  {
+                    "fieldName": "place"
+                  },
+                  {
+                    "fieldName": "time"
+                  },
+                  {
+                    "fieldName": "status"
+                  },
+                  {
+                    "fieldName": "tsunami"
+                  },
+                  {
+                    "fieldName": "url"
+                  },
+                  {
+                    "fieldName": "detail"
+                  },
+                  {
+                    "fieldName": "alert"
+                  },
+                  {
+                    "fieldName": "code"
+                  },
+                  {
+                    "fieldName": "ids"
+                  },
+                  {
+                    "fieldName": "sources"
+                  },
+                  {
+                    "fieldName": "types"
+                  },
+                  {
+                    "fieldName": "magType"
+                  },
+                  {
+                    "fieldName": "title"
+                  },
+                  {
+                    "fieldName": "id"
+                  },
+                  {
+                    "fieldName": "longitude"
+                  },
+                  {
+                    "fieldName": "latitude"
+                  },
+                  {
+                    "fieldName": "depth"
+                  },
+                  {
+                    "fieldName": "_load_timestamp"
+                  }
+                ],
+                "rowOrder": [
+                  {
+                    "by": "column",
+                    "field": {
+                      "index": 1
+                    }
+                  }
+                ]
+              },
+              "data": {
+                "queryName": "main_query"
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 1,
+            "width": 12,
+            "height": 6
+          }
+        },
+        {
+          "widget": {
+            "name": "3cd86669",
+            "spec": {
+              "widgetType": "text",
+              "version": 1,
+              "encodings": {
+                "text": {
+                  "lines": [
+                    "## <span style=\"font-weight: 500;font-family: Times New Roman;color: #077A9D;font-size: 24px;\">Earthquake Dashboard </span>"
+                  ],
+                  "fields": []
+                }
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 0,
+            "width": 7,
+            "height": 1
+          }
+        }
+      ],
+      "pageType": "PAGE_TYPE_CANVAS",
+      "layoutVersion": "GRID_V1"
+    }
+  ],
+  "uiSettings": {
+    "theme": {
+      "widgetHeaderAlignment": "ALIGNMENT_UNSPECIFIED"
+    },
+    "applyModeEnabled": false
+  }
+}

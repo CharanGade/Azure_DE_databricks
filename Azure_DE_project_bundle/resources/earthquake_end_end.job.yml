@@ -1,0 +1,29 @@
+resources:
+  jobs:
+    Azure_DE_EarthQuake_end_end_Job:
+      name: Azure_DE_EarthQuake_end_end_Job
+      tasks:
+        - task_key: Ingestion_Bronze
+          notebook_task:
+            notebook_path: ../src/notebooks/Ingestion_Bronze.ipynb
+            source: WORKSPACE
+        - task_key: Bronze_Silver_DE
+          depends_on:
+            - task_key: Ingestion_Bronze
+          pipeline_task:
+            pipeline_id: $ {resources.pipelines.Azure_DE_project_etl.id}
+        - task_key: Earthquake_Dashboard
+          depends_on:
+            - task_key: Bronze_Silver_DE
+          dashboard_task:
+            subscription:
+              attachment:
+                page_attachment: {}
+            warehouse_id: 032718d296e7344e
+            dashboard_id: $ {resources.dashboards.earthquake_monitor.id}
+      queue:
+        enabled: true
+      parameters:
+        - name: catalog_name
+          default:  ${var.catalog}
+      performance_target: PERFORMANCE_OPTIMIZED
