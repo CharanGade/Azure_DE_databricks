@@ -1,0 +1,22 @@
+# The main pipeline for Azure_DE_project
+
+resources:
+  pipelines:
+    Azure_DE_project_etl:
+      name: Bronze_Silver
+      configuration:
+        catalog_name: ${var.catalog}
+      libraries:
+        - glob:
+            include: /Workspace/Azure_DE_databricks/Azure_DE_databricks/Azure_DE_project_bundle/src/DLT_pipelines/Bronze_Silver/transformations/**
+      schema: silver
+      continuous: false
+      development: false
+      photon: true
+      channel: CURRENT
+      catalog: ${var.catalog}
+      serverless: true
+      root_path: /Workspace/Azure_DE_databricks/Azure_DE_databricks/Azure_DE_project_bundle/src/DLT_pipelines/Bronze_Silver
+
+
+
